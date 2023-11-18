@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-@DefaultUrl("https://www.amazon.com/-/es/")
+@DefaultUrl("https://www.amazon.com")
 public class AmazonHomePage extends PageObject {
 
     public static final Target SEARCH_ITEM = Target.the("search field")
-            .locatedBy("#twotabsearchtextbox");
+            .locatedBy("//*[@id='twotabsearchtextbox']");
 
     public static final Target LINK_ITEM = Target.the("a link")
             .locatedByFirstMatching("//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[5]/div/div/span/div/div/div/div[2]/div/div/div[1]/h2/a");

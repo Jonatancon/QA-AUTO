@@ -25,7 +25,6 @@ public class LookinformationAmazon {
     public static Performable addToShoppingCart() {
         return Task.where("{2} click add to cart",
                 Click.on(AmazonHomePage.ADD_CART)
-                        .withStrategy(ClickStrategy.WAIT_UNTIL_PRESENT)
         );
     }
 }

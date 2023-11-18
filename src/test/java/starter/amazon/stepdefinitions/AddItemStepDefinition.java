@@ -9,6 +9,8 @@ import net.serenitybdd.screenplay.questions.page.TheWebPage;
 import starter.amazon.navigation.AmazonHomePage;
 import starter.amazon.navigation.NavigateToAmazon;
 import starter.amazon.search.LookinformationAmazon;
+import starter.google.navigation.NavigateToGoogle;
+import starter.google.search.LookInformationGoogle;
 
 public class AddItemStepDefinition {
 
