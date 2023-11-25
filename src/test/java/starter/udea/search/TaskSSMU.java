@@ -1,5 +1,6 @@
 package starter.udea.search;
 
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -30,4 +31,44 @@ public class TaskSSMU {
         );
     }
 
+    public static Performable clickMissingPassword() {
+        return Task.where("{3} click missing password",
+                Click.on(SSMUHomePage.MISSING_PASSWORD)
+                );
+    }
+
+    public static Performable enterEmailMissingPassword(String email) {
+        return Task.where("{4} enter missing password",
+                Enter.theValue(email)
+                        .into(SSMUHomePage.USER)
+                )
+                .then(
+                        Click.on(SSMUHomePage.BUTTON_SEND_CODE)
+                );
+    }
+
+    public static Performable enterCode(String code) {
+        return Task.where("{5} enter missing password code",
+                        Enter.theValue(code)
+                                .into(SSMUHomePage.CODE)
+                )
+                .then(
+                        Click.on(SSMUHomePage.BUTTON_SEND_CODE)
+                );
+    }
+
+    public static Performable enterNewPassword(String newPassword) {
+        return Task.where("{6} enter new password",
+                        Enter.theValue(newPassword)
+                                .into(SSMUHomePage.PASSWORD_1)
+                                .thenHit(Keys.TAB)
+                )
+                .then(
+                        Enter.theValue(newPassword)
+                                .into(SSMUHomePage.PASSWORD_2)
+                )
+                .then(
+                  Click.on(SSMUHomePage.RESET)
+                );
+    }
 }
